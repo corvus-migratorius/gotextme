@@ -32,4 +32,4 @@ In order to use this tool, you need a Telegram bot. Follow these steps to set up
 2. Get the bot's API token from @BotFather
 3. Create a new Telegram group chat and add your bot. You'll be sending messages to that chat.
 4. Fetch bot updates and look for the chat id:
-    `curl https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates | jq .message.chat.id`
+    `curl https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates | jq .result[0].my_chat_member.chat.id`
