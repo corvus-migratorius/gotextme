@@ -12,8 +12,9 @@ import (
 	"gotextme/telegram"
 )
 
+// Load from disk and return a configuration in the INI format
 func getConfig() *ini.File {
-	// Construct a path to the expected location of the user's .pgpass file
+	// Construct a path to the expected location of the user's configuration file
 	usr, _ := user.Current()
 	homeDir := usr.HomeDir
 	path := filepath.Join(homeDir, ".gotextme.ini")

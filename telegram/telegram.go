@@ -1,18 +1,20 @@
+// Send messages via a Telegram Bot.
 package telegram
 
 import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"gopkg.in/ini.v1"
 	"io/ioutil"
 	"log"
 	"net/http"
+
+	"gopkg.in/ini.v1"
 )
 
-
+// Send message using a Telegram Bot via an HTTP POST request
 func SendMessage(text string, config *ini.File) {
-	botApiToken := config.Section("telegram").Key("botApiToken").String()	
+	botApiToken := config.Section("telegram").Key("botApiToken").String()
 	chatId := config.Section("telegram").Key("chatId").String()
 
 	// Compose a body of the request to the Telegram API
