@@ -1,11 +1,13 @@
 package main
 
 import (
-	"gopkg.in/ini.v1"
+	"fmt"
 	"log"
 	"os"
 	"os/user"
 	"path/filepath"
+
+	"gopkg.in/ini.v1"
 
 	"gotextme/telegram"
 )
@@ -33,10 +35,15 @@ func getConfig() *ini.File {
 }
 
 func main() {
+	if len(os.Args) < 2 {
+		fmt.Println("Please supply a message to be sent.")
+		os.Exit(1)
+	}
+
 	config := getConfig()
 
 	telegram.SendMessage(
-		"This is a more sophisticated test from Golang!",
+		os.Args[1],
 		config,
 	)
 }
