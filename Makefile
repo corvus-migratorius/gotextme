@@ -8,6 +8,6 @@ compile:
 
 copy: gotextme
 	sudo install -d $(PREFIX)
-	sudo install -m 755 mquery $(PREFIX)
+	sudo install -m 755 gotextme $(PREFIX)
 
 install: compile copy
