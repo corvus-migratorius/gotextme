@@ -22,14 +22,14 @@ func getConfig() *ini.File {
 	// Check if the configuration file exists
 	if _, err := os.Stat(path); err != nil {
 		log.Println(err)
-		log.Fatalf("FATAL: Can not access the configuration file: '%s'", path)
+		log.Fatalf("FATAL: Can not access the configuration file: '%s'\n", path)
 	}
 
 	// Parse the configuration INI file
 	config, err := ini.Load(path)
 	if err != nil {
 		log.Printf("Error parsing the INI file: '%s'\n", path)
-		log.Fatalf("ERROR: '%v'", err)
+		log.Fatalf("ERROR: '%v'\n", err)
 	}
 
 	return config
