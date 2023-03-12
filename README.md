@@ -10,9 +10,9 @@ sleep 30 && gotextme "I slept for 30 seconds"
 
 ## Installation
 
-1. Clone the repository and use the `make install` shell command. This requires `root`-level priviledges, since the destination directory is `/usr/local/bin`. (We are not installing the binary locally since the project is private, so using go install becomes a hassle).
+1. Clone the repository and use the `make install` shell command. This requires `root`-level priviledges, since the destination directory is `/usr/bin`. (We are not installing the binary locally since the project is private, so using `go install` becomes a hassle).
 
-2. Make sure that a properly formatted INI file named .gotextme.ini can be found under in your home directory root.
+2. Make sure that a properly formatted INI file named `.gotextme.ini` can be found under your home directory root.
 
 Configuration file example:
 
@@ -35,3 +35,4 @@ In order to use this tool, you need a Telegram bot. Follow these steps to set up
 ```bash
 curl "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates" | jq .result[0].my_chat_member.chat.id
 ```
+
