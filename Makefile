@@ -6,7 +6,6 @@ endif
 compile:
 	go build gotextme.go
 
-install: gotextme
+install: compile
 	sudo install -d $(PREFIX)
 	sudo install -m 755 gotextme $(PREFIX)
-
