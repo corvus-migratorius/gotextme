@@ -5,7 +5,13 @@ Send text messages to yourself via CLI. Primary use case: as a notifier for comp
 ## Usage
 
 ```bash
-sleep 30 && gotextme "I slept for 30 seconds"
+sleep 30; gotextme "I slept for 30 seconds"
+```
+
+If you want different messages on exit statuses != 0, try the following:
+
+```bash
+sleep 30 && gotextme "I slept for 30 seconds" || gotextme "Sleep has failed, somehow"
 ```
 
 ## Installation
